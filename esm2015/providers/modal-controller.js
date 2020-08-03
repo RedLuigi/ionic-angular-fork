@@ -1,0 +1,26 @@
+import * as tslib_1 from "tslib";
+import { ComponentFactoryResolver, Injectable, Injector } from '@angular/core';
+import { modalController } from '@ionic/core';
+import { OverlayBaseController } from '../util/overlay';
+import { AngularDelegate } from './angular-delegate';
+let ModalController = class ModalController extends OverlayBaseController {
+    constructor(angularDelegate, resolver, injector) {
+        super(modalController);
+        this.angularDelegate = angularDelegate;
+        this.resolver = resolver;
+        this.injector = injector;
+    }
+    create(opts) {
+        return super.create(Object.assign({}, opts, { delegate: this.angularDelegate.create(this.resolver, this.injector) }));
+    }
+};
+ModalController.ctorParameters = () => [
+    { type: AngularDelegate },
+    { type: ComponentFactoryResolver },
+    { type: Injector }
+];
+ModalController = tslib_1.__decorate([
+    Injectable()
+], ModalController);
+export { ModalController };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibW9kYWwtY29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0Bpb25pYy9hbmd1bGFyLyIsInNvdXJjZXMiOlsicHJvdmlkZXJzL21vZGFsLWNvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLE9BQU8sRUFBRSx3QkFBd0IsRUFBRSxVQUFVLEVBQUUsUUFBUSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQy9FLE9BQU8sRUFBZ0IsZUFBZSxFQUFFLE1BQU0sYUFBYSxDQUFDO0FBRTVELE9BQU8sRUFBRSxxQkFBcUIsRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBRXhELE9BQU8sRUFBRSxlQUFlLEVBQUUsTUFBTSxvQkFBb0IsQ0FBQztBQUdyRCxJQUFhLGVBQWUsR0FBNUIsTUFBYSxlQUFnQixTQUFRLHFCQUF3RDtJQUUzRixZQUNVLGVBQWdDLEVBQ2hDLFFBQWtDLEVBQ2xDLFFBQWtCO1FBRTFCLEtBQUssQ0FBQyxlQUFlLENBQUMsQ0FBQztRQUpmLG9CQUFlLEdBQWYsZUFBZSxDQUFpQjtRQUNoQyxhQUFRLEdBQVIsUUFBUSxDQUEwQjtRQUNsQyxhQUFRLEdBQVIsUUFBUSxDQUFVO0lBRzVCLENBQUM7SUFFRCxNQUFNLENBQUMsSUFBa0I7UUFDdkIsT0FBTyxLQUFLLENBQUMsTUFBTSxtQkFDZCxJQUFJLElBQ1AsUUFBUSxFQUFFLElBQUksQ0FBQyxlQUFlLENBQUMsTUFBTSxDQUFDLElBQUksQ0FBQyxRQUFRLEVBQUUsSUFBSSxDQUFDLFFBQVEsQ0FBQyxJQUNuRSxDQUFDO0lBQ0wsQ0FBQztDQUNGLENBQUE7O1lBYjRCLGVBQWU7WUFDdEIsd0JBQXdCO1lBQ3hCLFFBQVE7O0FBTGpCLGVBQWU7SUFEM0IsVUFBVSxFQUFFO0dBQ0EsZUFBZSxDQWdCM0I7U0FoQlksZUFBZSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudEZhY3RvcnlSZXNvbHZlciwgSW5qZWN0YWJsZSwgSW5qZWN0b3IgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcclxuaW1wb3J0IHsgTW9kYWxPcHRpb25zLCBtb2RhbENvbnRyb2xsZXIgfSBmcm9tICdAaW9uaWMvY29yZSc7XHJcblxyXG5pbXBvcnQgeyBPdmVybGF5QmFzZUNvbnRyb2xsZXIgfSBmcm9tICcuLi91dGlsL292ZXJsYXknO1xyXG5cclxuaW1wb3J0IHsgQW5ndWxhckRlbGVnYXRlIH0gZnJvbSAnLi9hbmd1bGFyLWRlbGVnYXRlJztcclxuXHJcbkBJbmplY3RhYmxlKClcclxuZXhwb3J0IGNsYXNzIE1vZGFsQ29udHJvbGxlciBleHRlbmRzIE92ZXJsYXlCYXNlQ29udHJvbGxlcjxNb2RhbE9wdGlvbnMsIEhUTUxJb25Nb2RhbEVsZW1lbnQ+IHtcclxuXHJcbiAgY29uc3RydWN0b3IoXHJcbiAgICBwcml2YXRlIGFuZ3VsYXJEZWxlZ2F0ZTogQW5ndWxhckRlbGVnYXRlLFxyXG4gICAgcHJpdmF0ZSByZXNvbHZlcjogQ29tcG9uZW50RmFjdG9yeVJlc29sdmVyLFxyXG4gICAgcHJpdmF0ZSBpbmplY3RvcjogSW5qZWN0b3IsXHJcbiAgKSB7XHJcbiAgICBzdXBlcihtb2RhbENvbnRyb2xsZXIpO1xyXG4gIH1cclxuXHJcbiAgY3JlYXRlKG9wdHM6IE1vZGFsT3B0aW9ucyk6IFByb21pc2U8SFRNTElvbk1vZGFsRWxlbWVudD4ge1xyXG4gICAgcmV0dXJuIHN1cGVyLmNyZWF0ZSh7XHJcbiAgICAgIC4uLm9wdHMsXHJcbiAgICAgIGRlbGVnYXRlOiB0aGlzLmFuZ3VsYXJEZWxlZ2F0ZS5jcmVhdGUodGhpcy5yZXNvbHZlciwgdGhpcy5pbmplY3RvcilcclxuICAgIH0pO1xyXG4gIH1cclxufVxyXG4iXX0=

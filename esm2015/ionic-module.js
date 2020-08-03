@@ -1,0 +1,148 @@
+import * as tslib_1 from "tslib";
+var IonicModule_1;
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { APP_INITIALIZER, NgModule, NgZone } from '@angular/core';
+import { appInitialize } from './app-initialize';
+import { BooleanValueAccessor } from './directives/control-value-accessors/boolean-value-accessor';
+import { NumericValueAccessor } from './directives/control-value-accessors/numeric-value-accesssor';
+import { RadioValueAccessor } from './directives/control-value-accessors/radio-value-accessor';
+import { SelectValueAccessor } from './directives/control-value-accessors/select-value-accessor';
+import { TextValueAccessor } from './directives/control-value-accessors/text-value-accessor';
+import { IonBackButtonDelegate } from './directives/navigation/ion-back-button';
+import { IonRouterOutlet } from './directives/navigation/ion-router-outlet';
+import { IonTabs } from './directives/navigation/ion-tabs';
+import { NavDelegate } from './directives/navigation/nav-delegate';
+import { RouterLinkDelegate } from './directives/navigation/router-link-delegate';
+import { IonApp, IonAvatar, IonBackButton, IonBackdrop, IonBadge, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCheckbox, IonChip, IonCol, IonContent, IonDatetime, IonFab, IonFabButton, IonFabList, IonFooter, IonGrid, IonHeader, IonIcon, IonImg, IonInfiniteScroll, IonInfiniteScrollContent, IonInput, IonItem, IonItemDivider, IonItemGroup, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList, IonListHeader, IonMenu, IonMenuButton, IonMenuToggle, IonNav, IonNavLink, IonNote, IonProgressBar, IonRadio, IonRadioGroup, IonRange, IonRefresher, IonRefresherContent, IonReorder, IonReorderGroup, IonRippleEffect, IonRow, IonSearchbar, IonSegment, IonSegmentButton, IonSelect, IonSelectOption, IonSkeletonText, IonSlide, IonSlides, IonSpinner, IonSplitPane, IonTabBar, IonTabButton, IonText, IonTextarea, IonThumbnail, IonTitle, IonToggle, IonToolbar } from './directives/proxies';
+import { VirtualFooter } from './directives/virtual-scroll/virtual-footer';
+import { VirtualHeader } from './directives/virtual-scroll/virtual-header';
+import { VirtualItem } from './directives/virtual-scroll/virtual-item';
+import { IonVirtualScroll } from './directives/virtual-scroll/virtual-scroll';
+import { AngularDelegate } from './providers/angular-delegate';
+import { ConfigToken } from './providers/config';
+import { ModalController } from './providers/modal-controller';
+import { PopoverController } from './providers/popover-controller';
+const DECLARATIONS = [
+    // proxies
+    IonApp,
+    IonAvatar,
+    IonBackButton,
+    IonBackdrop,
+    IonBadge,
+    IonButton,
+    IonButtons,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonCheckbox,
+    IonChip,
+    IonCol,
+    IonContent,
+    IonDatetime,
+    IonFab,
+    IonFabButton,
+    IonFabList,
+    IonFooter,
+    IonGrid,
+    IonHeader,
+    IonIcon,
+    IonImg,
+    IonInfiniteScroll,
+    IonInfiniteScrollContent,
+    IonInput,
+    IonItem,
+    IonItemDivider,
+    IonItemGroup,
+    IonItemOption,
+    IonItemOptions,
+    IonItemSliding,
+    IonLabel,
+    IonList,
+    IonListHeader,
+    IonMenu,
+    IonMenuButton,
+    IonMenuToggle,
+    IonNav,
+    IonNavLink,
+    IonNote,
+    IonProgressBar,
+    IonRadio,
+    IonRadioGroup,
+    IonRange,
+    IonRefresher,
+    IonRefresherContent,
+    IonReorder,
+    IonReorderGroup,
+    IonRippleEffect,
+    IonRow,
+    IonSearchbar,
+    IonSegment,
+    IonSegmentButton,
+    IonSelect,
+    IonSelectOption,
+    IonSkeletonText,
+    IonSlide,
+    IonSlides,
+    IonSpinner,
+    IonSplitPane,
+    IonTabBar,
+    IonTabButton,
+    IonText,
+    IonTextarea,
+    IonThumbnail,
+    IonToggle,
+    IonToolbar,
+    IonTitle,
+    IonTabs,
+    // ngModel accessors
+    BooleanValueAccessor,
+    NumericValueAccessor,
+    RadioValueAccessor,
+    SelectValueAccessor,
+    TextValueAccessor,
+    // navigation
+    IonRouterOutlet,
+    IonBackButtonDelegate,
+    NavDelegate,
+    RouterLinkDelegate,
+    // virtual scroll
+    VirtualFooter,
+    VirtualHeader,
+    VirtualItem,
+    IonVirtualScroll
+];
+let IonicModule = IonicModule_1 = class IonicModule {
+    static forRoot(config) {
+        return {
+            ngModule: IonicModule_1,
+            providers: [
+                {
+                    provide: ConfigToken,
+                    useValue: config
+                },
+                {
+                    provide: APP_INITIALIZER,
+                    useFactory: appInitialize,
+                    multi: true,
+                    deps: [
+                        ConfigToken,
+                        DOCUMENT,
+                        NgZone
+                    ]
+                }
+            ]
+        };
+    }
+};
+IonicModule = IonicModule_1 = tslib_1.__decorate([
+    NgModule({
+        declarations: DECLARATIONS,
+        exports: DECLARATIONS,
+        providers: [AngularDelegate, ModalController, PopoverController],
+        imports: [CommonModule]
+    })
+], IonicModule);
+export { IonicModule };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW9uaWMtbW9kdWxlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQGlvbmljL2FuZ3VsYXIvIiwic291cmNlcyI6WyJpb25pYy1tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxPQUFPLEVBQUUsWUFBWSxFQUFFLFFBQVEsRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBQ3pELE9BQU8sRUFBRSxlQUFlLEVBQXVCLFFBQVEsRUFBRSxNQUFNLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFHdkYsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLGtCQUFrQixDQUFDO0FBQ2pELE9BQU8sRUFBRSxvQkFBb0IsRUFBRSxNQUFNLDZEQUE2RCxDQUFDO0FBQ25HLE9BQU8sRUFBRSxvQkFBb0IsRUFBRSxNQUFNLDhEQUE4RCxDQUFDO0FBQ3BHLE9BQU8sRUFBRSxrQkFBa0IsRUFBRSxNQUFNLDJEQUEyRCxDQUFDO0FBQy9GLE9BQU8sRUFBRSxtQkFBbUIsRUFBRSxNQUFNLDREQUE0RCxDQUFDO0FBQ2pHLE9BQU8sRUFBRSxpQkFBaUIsRUFBRSxNQUFNLDBEQUEwRCxDQUFDO0FBQzdGLE9BQU8sRUFBRSxxQkFBcUIsRUFBRSxNQUFNLHlDQUF5QyxDQUFDO0FBQ2hGLE9BQU8sRUFBRSxlQUFlLEVBQUUsTUFBTSwyQ0FBMkMsQ0FBQztBQUM1RSxPQUFPLEVBQUUsT0FBTyxFQUFFLE1BQU0sa0NBQWtDLENBQUM7QUFDM0QsT0FBTyxFQUFFLFdBQVcsRUFBRSxNQUFNLHNDQUFzQyxDQUFDO0FBQ25FLE9BQU8sRUFBRSxrQkFBa0IsRUFBRSxNQUFNLDhDQUE4QyxDQUFDO0FBQ2xGLE9BQU8sRUFBRSxNQUFNLEVBQUUsU0FBUyxFQUFFLGFBQWEsRUFBRSxXQUFXLEVBQUUsUUFBUSxFQUFFLFNBQVMsRUFBRSxVQUFVLEVBQUUsT0FBTyxFQUFFLGNBQWMsRUFBRSxhQUFhLEVBQUUsZUFBZSxFQUFFLFlBQVksRUFBRSxXQUFXLEVBQUUsT0FBTyxFQUFFLE1BQU0sRUFBRSxVQUFV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QXFCO0lBQ3JCLFdBQVc7SUFDWCxrQkFBa0I7SUFFbEIsaUJBQWlCO0lBQ2pCLGFBQWE7SUFDYixhQUFhO0lBQ2IsV0FBVztJQUNYLGdCQUFnQjtDQUNqQixDQUFDO0FBUUYsSUFBYSxXQUFXLG1CQUF4QixNQUFhLFdBQVc7SUFDdEIsTUFBTSxDQUFDLE9BQU8sQ0FBQyxNQUFvQjtRQUNqQyxPQUFPO1lBQ0wsUUFBUSxFQUFFLGFBQVc7WUFDckIsU0FBUyxFQUFFO2dCQUNUO29CQUNFLE9BQU8sRUFBRSxXQUFXO29CQUNwQixRQUFRLEVBQUUsTUFBTTtpQkFDakI7Z0JBQ0Q7b0JBQ0UsT0FBTyxFQUFFLGVBQWU7b0JBQ3hCLFVBQVUsRUFBRSxhQUFhO29CQUN6QixLQUFLLEVBQUUsSUFBSTtvQkFDWCxJQUFJLEVBQUU7d0JBQ0osV0FBVzt3QkFDWCxRQUFRO3dCQUNSLE1BQU07cUJBQ1A7aUJBQ0Y7YUFDRjtTQUNGLENBQUM7SUFDSixDQUFDO0NBQ0YsQ0FBQTtBQXRCWSxXQUFXO0lBTnZCLFFBQVEsQ0FBQztRQUNSLFlBQVksRUFBRSxZQUFZO1FBQzFCLE9BQU8sRUFBRSxZQUFZO1FBQ3JCLFNBQVMsRUFBRSxDQUFDLGVBQWUsRUFBRSxlQUFlLEVBQUUsaUJBQWlCLENBQUM7UUFDaEUsT0FBTyxFQUFFLENBQUMsWUFBWSxDQUFDO0tBQ3hCLENBQUM7R0FDVyxXQUFXLENBc0J2QjtTQXRCWSxXQUFXIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tbW9uTW9kdWxlLCBET0NVTUVOVCB9IGZyb20gJ0Bhbmd1bGFyL2NvbW1vbic7XHJcbmltcG9ydCB7IEFQUF9JTklUSUFMSVpFUiwgTW9kdWxlV2l0aFByb3ZpZGVycywgTmdNb2R1bGUsIE5nWm9uZSB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5pbXBvcnQgeyBJb25pY0NvbmZpZyB9IGZyb20gJ0Bpb25pYy9jb3JlJztcclxuXHJcbmltcG9ydCB7IGFwcEluaXRpYWxpemUgfSBmcm9tICcuL2FwcC1pbml0aWFsaXplJztcclxuaW1wb3J0IHsgQm9vbGVhblZhbHVlQWNjZXNzb3IgfSBmcm9tICcuL2RpcmVjdGl2ZXMvY29udHJvbC12YWx1ZS1hY2Nlc3NvcnMvYm9vbGVhbi12YWx1ZS1hY2Nlc3Nvcic7XHJcbmltcG9ydCB7IE51bWVyaWNWYWx1ZUFjY2Vzc29yIH0gZnJvbSAnLi9kaXJlY3RpdmVzL2NvbnRyb2wtdmFsdWUtYWNjZXNzb3JzL251bWVyaWMtdmFsdWUtYWNjZXNzc29yJztcclxuaW1wb3J0IHsgUmFkaW9WYWx1ZUFjY2Vzc29yIH0gZnJvbSAnLi9kaXJlY3RpdmVzL2NvbnRyb2wtdmFsdWUtYWNjZXNzb3JzL3JhZGlvLXZhbHVlLWFjY2Vzc29yJztcclxuaW1wb3J0IHsgU2VsZWN0VmFsdWVBY2Nlc3NvciB9IGZyb20gJy4vZGlyZWN0aXZlcy9jb250cm9sLXZhbHVlLWFjY2Vzc29ycy9zZWxlY3QtdmFsdWUtYWNjZXNzb3InO1xyXG5pbXBvcnQgeyBUZXh0VmFsdWVBY2Nlc3NvciB9IGZyb20gJy4vZGlyZWN0aXZlcy9jb250cm9sLXZhbHVlLWFjY2Vzc29ycy90ZXh0LXZhbHVlLWFjY2Vzc29yJztcclxuaW1wb3J0IHsgSW9uQmFja0J1dHRvbkRlbGVnYXRlIH0gZnJvbSAnLi9kaXJlY3RpdmVzL25hdmlnYXRpb24vaW9uLWJhY2stYnV0dG9uJztcclxuaW1wb3J0IHsgSW9uUm91dGVyT3V0bGV0IH0gZnJvbSAnLi9kaXJlY3RpdmVzL25hdmlnYXRpb24vaW9uLXJvdXRlci1vdXRsZXQnO1xyXG5pbXBvcnQgeyBJb25UYWJzIH0gZnJvbSAnLi9kaXJlY3RpdmVzL25hdmlnYXRpb24vaW9uLXRhYnMnO1xyXG5pbXBvcnQgeyBOYXZEZWxlZ2F0ZSB9IGZyb20gJy4vZGlyZWN0aXZlcy9uYXZpZ2F0aW9uL25hdi1kZWxlZ2F0ZSc7XHJcbmltcG9ydCB7IFJvdXRlckxpbmtEZWxlZ2F0ZSB9IGZyb20gJy4vZGlyZWN0aXZlcy9uYXZpZ2F0aW9uL3JvdXRlci1saW5rLWRlbGVnYXRlJztcclxuaW1wb3J0IHsgSW9uQXBwLCBJb25BdmF0YXIsIElvbkJhY2tCdXR0b24sIElvbkJhY2tkcm9wLCBJb25CYWRnZSwgSW9uQnV0dG9uLCBJb25CdXR0b25zLCBJb25DYXJkLCBJb25DYXJkQ29udGVudCwgSW9uQ2FyZEhlYWRlciwgSW9uQ2FyZFN1YnRpdGxlLCBJb25DYXJkVGl0bGUsIElvbkNoZWNrYm94LCBJb25DaGlwLCBJb25Db2wsIElvbkNvbnRlbnQsIElvbkRhdGV0aW1lLCBJb25GYWIsIElvbkZhYkJ1dHRvbiwgSW9uRmFiTGlzdCwgSW9uRm9vdGVyLCBJb25HcmlkLCBJb25IZWFkZXIsIElvbkljb24sIElvbkltZywgSW9uSW5maW5pdGVTY3JvbGwsIElvbkluZmluaXRlU2Nyb2xsQ29udGVudCwgSW9uSW5wdXQsIElvbkl0ZW0sIElvbkl0ZW1EaXZpZGVyLCBJb25JdGVtR3JvdXAsIElvbkl0ZW1PcHRpb24sIElvbkl0ZW1PcHRpb25zLCBJb25JdGVtU2xpZGluZywgSW9uTGFiZWwsIElvbkxpc3QsIElvbkxpc3RIZWFkZXIsIElvbk1lbnUsIElvbk1lbnVCdXR0b24sIElvbk1lbnVUb2dnbGUsIElvbk5hdiwgSW9uTmF2TGluaywgSW9uTm90ZSwgSW9uUHJvZ3Jlc3NCYXIsIElvblJhZGlvLCBJb25SYWRpb0dyb3VwLCBJb25SYW5nZSwgSW9uUmVmcmVzaGVyLCBJb25SZWZyZXNoZXJDb250ZW50LCBJb25SZW9yZGVyLCBJb25SZW9yZGVyR3JvdXAsIElvblJpcHBsZUVmZmVjdCwgSW9uUm93LCBJb25TZWFyY2hiYXIsIElvblNlZ21lbnQsIElvblNlZ21lbnRCdXR0b24sIElvblNlbGVjdCwgSW9uU2VsZWN0T3B0aW9uLCBJb25Ta2VsZXRvblRleHQsIElvblNsaWRlLCBJb25TbGlkZXMsIElvblNwaW5uZXIsIElvblNwbGl0UGFuZSwgSW9uVGFiQmFyLCBJb25UYWJCdXR0b24sIElvblRleHQsIElvblRleHRhcmVhLCBJb25UaHVtYm5haWwsIElvblRpdGxlLCBJb25Ub2dnbGUsIElvblRvb2xiYXIgfSBmcm9tICcuL2RpcmVjdGl2ZXMvcHJveGllcyc7XHJcbmltcG9ydCB7IFZpcnR1YWxGb290ZXIgfSBmcm9tICcuL2RpcmVjdGl2ZXMvdmlydHVhbC1zY3JvbGwvdmlydHVhbC1mb290ZXInO1xyXG5pbXBvcnQgeyBWaXJ0dWFsSGVhZGVyIH0gZnJvbSAnLi9kaXJlY3RpdmVzL3ZpcnR1YWwtc2Nyb2xsL3ZpcnR1YWwtaGVhZGVyJztcclxuaW1wb3J0IHsgVmlydHVhbEl0ZW0gfSBmcm9tICcuL2RpcmVjdGl2ZXMvdmlydHVhbC1zY3JvbGwvdmlydHVhbC1pdGVtJztcclxuaW1wb3J0IHsgSW9uVmlydHVhbFNjcm9sbCB9IGZyb20gJy4vZGlyZWN0aXZlcy92aXJ0dWFsLXNjcm9sbC92aXJ0dWFsLXNjcm9sbCc7XHJcbmltcG9ydCB7IEFuZ3VsYXJEZWxlZ2F0ZSB9IGZyb20gJy4vcHJvdmlkZXJzL2FuZ3VsYXItZGVsZWdhdGUnO1xyXG5pbXBvcnQgeyBDb25maWdUb2tlbiB9IGZyb20gJy4vcHJvdmlkZXJzL2NvbmZpZyc7XHJcbmltcG9ydCB7IE1vZGFsQ29udHJvbGxlciB9IGZyb20gJy4vcHJvdmlkZXJzL21vZGFsLWNvbnRyb2xsZXInO1xyXG5pbXBvcnQgeyBQb3BvdmVyQ29udHJvbGxlciB9IGZyb20gJy4vcHJvdmlkZXJzL3BvcG92ZXItY29udHJvbGxlcic7XHJcblxyXG5jb25zdCBERUNMQVJBVElPTlMgPSBbXHJcbiAgLy8gcHJveGllc1xyXG4gIElvbkFwcCxcclxuICBJb25BdmF0YXIsXHJcbiAgSW9uQmFja0J1dHRvbixcclxuICBJb25CYWNrZHJvcCxcclxuICBJb25CYWRnZSxcclxuICBJb25CdXR0b24sXHJcbiAgSW9uQnV0dG9ucyxcclxuICBJb25DYXJkLFxyXG4gIElvbkNhcmRDb250ZW50LFxyXG4gIElvbkNhcmRIZWFkZXIsXHJcbiAgSW9uQ2FyZFN1YnRpdGxlLFxyXG4gIElvbkNhcmRUaXRsZSxcclxuICBJb25DaGVja2JveCxcclxuICBJb25DaGlwLFxyXG4gIElvbkNvbCxcclxuICBJb25Db250ZW50LFxyXG4gIElvbkRhdGV0aW1lLFxyXG4gIElvbkZhYixcclxuICBJb25GYWJCdXR0b24sXHJcbiAgSW9uRmFiTGlzdCxcclxuICBJb25Gb290ZXIsXHJcbiAgSW9uR3JpZCxcclxuICBJb25IZWFkZXIsXHJcbiAgSW9uSWNvbixcclxuICBJb25JbWcsXHJcbiAgSW9uSW5maW5pdGVTY3JvbGwsXHJcbiAgSW9uSW5maW5pdGVTY3JvbGxDb250ZW50LFxyXG4gIElvbklucHV0LFxyXG4gIElvbkl0ZW0sXHJcbiAgSW9uSXRlbURpdmlkZXIsXHJcbiAgSW9uSXRlbUdyb3VwLFxyXG4gIElvbkl0ZW1PcHRpb24sXHJcbiAgSW9uSXRlbU9wdGlvbnMsXHJcbiAgSW9uSXRlbVNsaWRpbmcsXHJcbiAgSW9uTGFiZWwsXHJcbiAgSW9uTGlzdCxcclxuICBJb25MaXN0SGVhZGVyLFxyXG4gIElvbk1lbnUsXHJcbiAgSW9uTWVudUJ1dHRvbixcclxuICBJb25NZW51VG9nZ2xlLFxyXG4gIElvbk5hdixcclxuICBJb25OYXZMaW5rLFxyXG4gIElvbk5vdGUsXHJcbiAgSW9uUHJvZ3Jlc3NCYXIsXHJcbiAgSW9uUmFkaW8sXHJcbiAgSW9uUmFkaW9Hcm91cCxcclxuICBJb25SYW5nZSxcclxuICBJb25SZWZyZXNoZXIsXHJcbiAgSW9uUmVmcmVzaGVyQ29udGVudCxcclxuICBJb25SZW9yZGVyLFxyXG4gIElvblJlb3JkZXJHcm91cCxcclxuICBJb25SaXBwbGVFZmZlY3QsXHJcbiAgSW9uUm93LFxyXG4gIElvblNlYXJjaGJhcixcclxuICBJb25TZWdtZW50LFxyXG4gIElvblNlZ21lbnRCdXR0b24sXHJcbiAgSW9uU2VsZWN0LFxyXG4gIElvblNlbGVjdE9wdGlvbixcclxuICBJb25Ta2VsZXRvblRleHQsXHJcbiAgSW9uU2xpZGUsXHJcbiAgSW9uU2xpZGVzLFxyXG4gIElvblNwaW5uZXIsXHJcbiAgSW9uU3BsaXRQYW5lLFxyXG4gIElvblRhYkJhcixcclxuICBJb25UYWJCdXR0b24sXHJcbiAgSW9uVGV4dCxcclxuICBJb25UZXh0YXJlYSxcclxuICBJb25UaHVtYm5haWwsXHJcbiAgSW9uVG9nZ2xlLFxyXG4gIElvblRvb2xiYXIsXHJcbiAgSW9uVGl0bGUsXHJcblxyXG4gIElvblRhYnMsXHJcblxyXG4gIC8vIG5nTW9kZWwgYWNjZXNzb3JzXHJcbiAgQm9vbGVhblZhbHVlQWNjZXNzb3IsXHJcbiAgTnVtZXJpY1ZhbHVlQWNjZXNzb3IsXHJcbiAgUmFkaW9WYWx1ZUFjY2Vzc29yLFxyXG4gIFNlbGVjdFZhbHVlQWNjZXNzb3IsXHJcbiAgVGV4dFZhbHVlQWNjZXNzb3IsXHJcblxyXG4gIC8vIG5hdmlnYXRpb25cclxuICBJb25Sb3V0ZXJPdXRsZXQsXHJcbiAgSW9uQmFja0J1dHRvbkRlbGVnYXRlLFxyXG4gIE5hdkRlbGVnYXRlLFxyXG4gIFJvdXRlckxpbmtEZWxlZ2F0ZSxcclxuXHJcbiAgLy8gdmlydHVhbCBzY3JvbGxcclxuICBWaXJ0dWFsRm9vdGVyLFxyXG4gIFZpcnR1YWxIZWFkZXIsXHJcbiAgVmlydHVhbEl0ZW0sXHJcbiAgSW9uVmlydHVhbFNjcm9sbFxyXG5dO1xyXG5cclxuQE5nTW9kdWxlKHtcclxuICBkZWNsYXJhdGlvbnM6IERFQ0xBUkFUSU9OUyxcclxuICBleHBvcnRzOiBERUNMQVJBVElPTlMsXHJcbiAgcHJvdmlkZXJzOiBbQW5ndWxhckRlbGVnYXRlLCBNb2RhbENvbnRyb2xsZXIsIFBvcG92ZXJDb250cm9sbGVyXSxcclxuICBpbXBvcnRzOiBbQ29tbW9uTW9kdWxlXVxyXG59KVxyXG5leHBvcnQgY2xhc3MgSW9uaWNNb2R1bGUge1xyXG4gIHN0YXRpYyBmb3JSb290KGNvbmZpZz86IElvbmljQ29uZmlnKTogTW9kdWxlV2l0aFByb3ZpZGVyczxJb25pY01vZHVsZT4ge1xyXG4gICAgcmV0dXJuIHtcclxuICAgICAgbmdNb2R1bGU6IElvbmljTW9kdWxlLFxyXG4gICAgICBwcm92aWRlcnM6IFtcclxuICAgICAgICB7XHJcbiAgICAgICAgICBwcm92aWRlOiBDb25maWdUb2tlbixcclxuICAgICAgICAgIHVzZVZhbHVlOiBjb25maWdcclxuICAgICAgICB9LFxyXG4gICAgICAgIHtcclxuICAgICAgICAgIHByb3ZpZGU6IEFQUF9JTklUSUFMSVpFUixcclxuICAgICAgICAgIHVzZUZhY3Rvcnk6IGFwcEluaXRpYWxpemUsXHJcbiAgICAgICAgICBtdWx0aTogdHJ1ZSxcclxuICAgICAgICAgIGRlcHM6IFtcclxuICAgICAgICAgICAgQ29uZmlnVG9rZW4sXHJcbiAgICAgICAgICAgIERPQ1VNRU5ULFxyXG4gICAgICAgICAgICBOZ1pvbmVcclxuICAgICAgICAgIF1cclxuICAgICAgICB9XHJcbiAgICAgIF1cclxuICAgIH07XHJcbiAgfVxyXG59XHJcbiJdfQ==
