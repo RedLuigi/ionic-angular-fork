@@ -3039,7 +3039,7 @@
             this._activatedRoute = activatedRoute;
             var cmpRef;
             var enteringView = this.stackCtrl.getExistingView(activatedRoute);
-            if (enteringView) {
+            if (enteringView && (!activatedRoute.routeConfig || !activatedRoute.routeConfig.data || !activatedRoute.routeConfig.data.noReuse)) {
                 cmpRef = this.activated = enteringView.ref;
                 var saved = enteringView.savedData;
                 if (saved) {
