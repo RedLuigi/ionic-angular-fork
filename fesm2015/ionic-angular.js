@@ -2640,7 +2640,7 @@ let IonRouterOutlet = class IonRouterOutlet {
         this._activatedRoute = activatedRoute;
         let cmpRef;
         let enteringView = this.stackCtrl.getExistingView(activatedRoute);
-        if (enteringView && (!activatedRoute.routeConfig || !activatedRoute.routeConfig.data || !activatedRoute.routeConfig.data.noReuse)) {
+        if (enteringView) {
             cmpRef = this.activated = enteringView.ref;
             const saved = enteringView.savedData;
             if (saved) {

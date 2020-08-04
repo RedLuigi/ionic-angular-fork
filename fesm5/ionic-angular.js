@@ -2825,7 +2825,7 @@ var IonRouterOutlet = /** @class */ (function () {
         this._activatedRoute = activatedRoute;
         var cmpRef;
         var enteringView = this.stackCtrl.getExistingView(activatedRoute);
-        if (enteringView && (!activatedRoute.routeConfig || !activatedRoute.routeConfig.data || !activatedRoute.routeConfig.data.noReuse)) {
+        if (enteringView) {
             cmpRef = this.activated = enteringView.ref;
             var saved = enteringView.savedData;
             if (saved) {
