@@ -2551,7 +2551,7 @@ let IonRouterOutlet = class IonRouterOutlet {
         this.nativeEl.swipeHandler = swipe ? {
             canStart: () => this.stackCtrl.canGoBack(1),
             onStart: () => this.stackCtrl.startBackTransition(),
-            onEnd: shouldContinue => this.stackCtrl.endBackTransition(shouldContinue)
+            onEnd: (shouldContinue) => this.stackCtrl.endBackTransition(shouldContinue)
         } : undefined;
     }
     ngOnDestroy() {
@@ -2640,7 +2640,7 @@ let IonRouterOutlet = class IonRouterOutlet {
         this._activatedRoute = activatedRoute;
         let cmpRef;
         let enteringView = this.stackCtrl.getExistingView(activatedRoute);
-        if (enteringView) {
+        if (enteringView && (!activatedRoute.routeConfig || !activatedRoute.routeConfig.data || !activatedRoute.routeConfig.data.noReuse)) {
             cmpRef = this.activated = enteringView.ref;
             const saved = enteringView.savedData;
             if (saved) {
